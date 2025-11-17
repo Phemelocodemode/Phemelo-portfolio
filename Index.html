@@ -3,108 +3,202 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Phemelo Sebopelo — Data Analyst</title>
+  <title>Phemelo Sebopelo — Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Phemelo Sebopelo — Aspiring Data Analyst & Dev. SQL, Python, Tableau. Projects: Netflix analysis, SA crime, Bankruptcy prediction, VITACARE telemedicine." />
   <link rel="icon" href="assets/favicon.png" />
 </head>
 <body>
   <header class="hero">
-    <div class="container">
+    <div class="container hero-grid">
       <img class="avatar" src="assets/avatar.jpg" alt="Phemelo Sebopelo" />
+
       <div class="hero-text">
         <h1>Phemelo Sebopelo</h1>
-        <p class="subtitle">Aspiring Data Analyst • SQL • Python • Tableau</p>
-        <p class="lead">I build clean data projects, dashboards and scripts that turn raw data into clear insights.</p>
+        <p class="subtitle">BSc IT • Data Analyst • Web & App Enthusiast</p>
+        <p class="lead">I build data projects (SQL, Python, Tableau) and practical web tools that help analyze and present insights. I document my process and publish reproducible notebooks.</p>
+
         <div class="cta">
-          <a class="btn" href="https://github.com/Phemelocodemode" target="_blank">GitHub</a>
-          <a class="btn ghost" href="https://www.linkedin.com/in/phemelo-sebopelo-a428712b2/" target="_blank">LinkedIn</a>
+          <a class="btn" href="https://github.com/Phemelocodemode" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/phemelo-sebopelo-a428712b2/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn ghost" href="assets/Phemelo_Sebopelo_CV.pdf" download>Resume</a>
+        </div>
+
+        <div class="quick-info">
+          <span>WIL: KATAFRICA Strategic Solutions</span> • <span>Richfield College</span>
         </div>
       </div>
     </div>
   </header>
 
-  <main class="container">
-    <section id="about">
-      <h2>About</h2>
-      <p>I’m a BSc IT student focusing on SQL, Python and Tableau. I work on data cleaning, EDA, dashboards and ML prototypes. I document projects and share notebooks so others can learn from them.</p>
-    </section>
+  <main class="container main-grid">
 
-    <section id="skills">
+    <!-- Skills -->
+    <section id="skills" class="section">
       <h2>Skills</h2>
-      <div class="badges">
-        <span class="badge">SQL</span>
-        <span class="badge">Python</span>
-        <span class="badge">Pandas</span>
-        <span class="badge">NumPy</span>
-        <span class="badge">Matplotlib</span>
-        <span class="badge">Tableau</span>
-        <span class="badge">Jupyter</span>
-        <span class="badge">Excel</span>
+      <p class="muted">Data & tools I use regularly</p>
+
+      <div class="badges-row">
+        <img class="badge-icon" src="assets/badge-python.svg" alt="Python" title="Python">
+        <img class="badge-icon" src="assets/badge-sql.svg" alt="SQL" title="SQL">
+        <img class="badge-icon" src="assets/badge-pandas.svg" alt="Pandas" title="Pandas">
+        <img class="badge-icon" src="assets/badge-numpy.svg" alt="NumPy" title="NumPy">
+        <img class="badge-icon" src="assets/badge-matplotlib.svg" alt="Matplotlib" title="Matplotlib">
+        <img class="badge-icon" src="assets/badge-jupyter.svg" alt="Jupyter" title="Jupyter">
+        <img class="badge-icon" src="assets/badge-tableau.svg" alt="Tableau" title="Tableau">
+        <img class="badge-icon" src="assets/badge-html.svg" alt="HTML" title="HTML/CSS">
       </div>
     </section>
 
-    <section id="projects">
+    <!-- Projects -->
+    <section id="projects" class="section">
       <h2>Highlighted Projects</h2>
+      <p class="muted">A mix of data analysis and development projects. Click a card to view details or visit the repo.</p>
 
       <div class="grid">
-        <!-- Project 1 -->
-        <article class="card">
-          <img src="assets/netflix.png" alt="Netflix Data Analysis" />
+        <!-- Project: Netflix Data Analysis -->
+        <article class="card" data-project="netflix">
+          <img src="assets/netflix.png" alt="Netflix Data Analysis">
           <div class="card-body">
             <h3>Netflix Data Analysis</h3>
-            <p>Python & Pandas — cleaned Netflix dataset and built visuals to find content trends and genre insights.</p>
+            <p class="muted">Python • Pandas • Matplotlib — cleaning, EDA & visual insights on titles & genres.</p>
             <div class="card-actions">
-              <a class="link" href="https://github.com/Phemelocodemode/netflix-analysis" target="_blank">Repo</a>
-              <a class="link" href="#">Demo</a>
+              <a href="https://github.com/Phemelocodemode/netflix-analysis" target="_blank" rel="noopener">Repo</a>
+              <button class="btn-outline" data-open="netflix">Details</button>
             </div>
           </div>
         </article>
 
-        <!-- Project 2 -->
-        <article class="card">
-          <img src="assets/crime.png" alt="Crime Data Analysis" />
+        <!-- Project: SA Crime Data Analysis -->
+        <article class="card" data-project="crime">
+          <img src="assets/crime.png" alt="SA Crime Data Analysis">
           <div class="card-body">
-            <h3>SA Crime Data Analysis</h3>
-            <p>Exploratory analysis and automated CSV pipelines; visualized crime categories and trends.</p>
+            <h3>South African Crime Data Analysis</h3>
+            <p class="muted">Python • CSV pipelines • Visualizations to explore crime trends & categories.</p>
             <div class="card-actions">
-              <a class="link" href="https://github.com/Phemelocodemode/sa-crime-analysis" target="_blank">Repo</a>
-              <a class="link" href="#">Notebook</a>
+              <a href="https://github.com/Phemelocodemode/sa-crime-analysis" target="_blank" rel="noopener">Repo</a>
+              <button class="btn-outline" data-open="crime">Details</button>
             </div>
           </div>
         </article>
 
-        <!-- Project 3 -->
-        <article class="card">
-          <img src="assets/bankruptcy.png" alt="Bankruptcy Prediction" />
+        <!-- Project: Bankruptcy Prediction -->
+        <article class="card" data-project="bankruptcy">
+          <img src="assets/bankruptcy.png" alt="Bankruptcy Prediction">
           <div class="card-body">
             <h3>Bankruptcy Prediction (ML)</h3>
-            <p>Built Logistic Regression & Random Forest models with scikit-learn; feature engineering and evaluation.</p>
+            <p class="muted">Python • scikit-learn — Logistic Regression & Random Forest for prediction & evaluation.</p>
             <div class="card-actions">
-              <a class="link" href="https://github.com/Phemelocodemode/bankruptcy-prediction" target="_blank">Repo</a>
-              <a class="link" href="#">Report</a>
+              <a href="https://github.com/Phemelocodemode/bankruptcy-prediction" target="_blank" rel="noopener">Repo</a>
+              <button class="btn-outline" data-open="bankruptcy">Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project: VITACARE Telemedicine -->
+        <article class="card" data-project="vitacare">
+          <img src="assets/vitacare.png" alt="VITACARE Telemedicine">
+          <div class="card-body">
+            <h3>VITACARE Telemedicine (Group Project)</h3>
+            <p class="muted">HTML • CSS • UX structure — contributed UI layout and documentation during group project.</p>
+            <div class="card-actions">
+              <a href="https://github.com/kamogeloseshabela/vitacare-medicine" target="_blank" rel="noopener">Repo</a>
+              <button class="btn-outline" data-open="vitacare">Details</button>
             </div>
           </div>
         </article>
       </div>
-
-      <p class="hint">Tip: update each project card with real repo links or Tableau embed links.</p>
     </section>
 
-    <section id="contact">
+    <!-- Education / WIL -->
+    <section id="education" class="section">
+      <h2>Education & WIL</h2>
+      <p class="muted">BSc IT — Richfield College. WIL placement at KATAFRICA Strategic Solutions (Bryanston) — Excel automation, property inspection form automation, and website support.</p>
+    </section>
+
+    <!-- Stats & Quote (centered visuals) -->
+    <section id="stats" class="section">
+      <h2>GitHub & Activity</h2>
+      <div class="centered-block">
+        <img src="https://github-readme-stats.vercel.app/api?username=Phemelocodemode&show_icons=true&theme=tokyonight&hide_border=true" height="140" alt="GitHub Stats"/>
+        <img src="https://streak-stats.demolab.com/?user=Phemelocodemode&theme=tokyonight" height="140" alt="Streak"/>
+      </div>
+
+      <div class="centered-block" style="margin-top:14px;">
+        <img src="./assets/quote.svg" alt="Quote" style="max-width:760px;width:100%;height:auto" />
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:phemelosebopelo14@gmail.com">phemelosebopelo14@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/phemelo-sebopelo-a428712b2/" target="_blank">/phemelo-sebopelo-a428712b2</a></p>
+      <p class="muted">Open to internships, WIL, and junior data roles. Email for enquiries or collaborations.</p>
+      <p><strong>Email:</strong> <a href="mailto:phemelosebopelo14@gmail.com">phemelosebopelo14@gmail.com</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/phemelo-sebopelo-a428712b2/" target="_blank" rel="noopener">/phemelo-sebopelo-a428712b2</a></p>
     </section>
+
   </main>
 
   <footer class="foot">
     <div class="container">
-      <p>© <span id="year"></span> Phemelo Sebopelo • Built with GitHub Pages</p>
+      <p>© <span id="year"></span> Phemelo Sebopelo • Built with GitHub Pages / Netlify</p>
     </div>
   </footer>
 
+  <!-- Project details modals (keeps page single-file) -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-body">
+      <button id="modal-close" class="modal-close">✕</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
   <script>
     document.getElementById('year').innerText = new Date().getFullYear();
+
+    const details = {
+      netflix: {
+        title: "Netflix Data Analysis",
+        body: "<p><strong>Tools:</strong> Python, Pandas, Matplotlib, Jupyter.</p><p>Summary: cleaned dataset, engineered features, produced visual dashboards exploring top genres, release-year trends, and content duration. Includes reproducible notebooks and README with insights.</p><p><strong>Repo:</strong> <a href='https://github.com/Phemelocodemode/netflix-analysis' target='_blank' rel='noopener'>github.com/Phemelocodemode/netflix-analysis</a></p>"
+      },
+      crime: {
+        title: "South African Crime Data Analysis",
+        body: "<p><strong>Tools:</strong> Python, Pandas, Matplotlib, CSV automation scripts.</p><p>Summary: processed raw CSVs, created automated ETL scripts, visualized crime counts by category, region, and year. Includes charts and exportable CSVs for further analysis.</p><p><strong>Repo:</strong> <a href='https://github.com/Phemelocodemode/sa-crime-analysis' target='_blank' rel='noopener'>github.com/Phemelocodemode/sa-crime-analysis</a></p>"
+      },
+      bankruptcy: {
+        title: "Bankruptcy Prediction (ML)",
+        body: "<p><strong>Tools:</strong> Python, scikit-learn, Pandas.</p><p>Summary: model pipeline, feature engineering, model comparison (logistic regression vs random forest), evaluation, and a short report on model performance & ROC curves.</p><p><strong>Repo:</strong> <a href='https://github.com/Phemelocodemode/bankruptcy-prediction' target='_blank' rel='noopener'>github.com/Phemelocodemode/bankruptcy-prediction</a></p>"
+      },
+      vitacare: {
+        title: "VITACARE Telemedicine (Group Project)",
+        body: "<p><strong>Tools:</strong> HTML, CSS, documentation, UI layout.</p><p>Summary: group telemedicine project used for class. I contributed to UI layout, documentation, and structure. Link to the team repo provided.</p><p><strong>Repo:</strong> <a href='https://github.com/kamogeloseshabela/vitacare-medicine' target='_blank' rel='noopener'>github.com/kamogeloseshabela/vitacare-medicine</a></p>"
+      }
+    };
+
+    // open modal
+    document.querySelectorAll('.btn-outline').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const key = e.currentTarget.getAttribute('data-open');
+        const m = details[key];
+        document.getElementById('modal-content').innerHTML = `<h3>${m.title}</h3>${m.body}`;
+        document.getElementById('modal').setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // close modal
+    document.getElementById('modal-close').addEventListener('click', () => {
+      document.getElementById('modal').setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    });
+
+    // close on outside click
+    document.getElementById('modal').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('modal')) {
+        document.getElementById('modal').setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+    });
   </script>
 </body>
 </html>
