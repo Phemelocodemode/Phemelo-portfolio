@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Phemelo Sebopelo — Data Analyst</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/favicon.png" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <img class="avatar" src="assets/avatar.jpg" alt="Phemelo Sebopelo" />
+      <div class="hero-text">
+        <h1>Phemelo Sebopelo</h1>
+        <p class="subtitle">Aspiring Data Analyst • SQL • Python • Tableau</p>
+        <p class="lead">I build clean data projects, dashboards and scripts that turn raw data into clear insights.</p>
+        <div class="cta">
+          <a class="btn" href="https://github.com/Phemelocodemode" target="_blank">GitHub</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/phemelo-sebopelo-a428712b2/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about">
+      <h2>About</h2>
+      <p>I’m a BSc IT student focusing on SQL, Python and Tableau. I work on data cleaning, EDA, dashboards and ML prototypes. I document projects and share notebooks so others can learn from them.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="badges">
+        <span class="badge">SQL</span>
+        <span class="badge">Python</span>
+        <span class="badge">Pandas</span>
+        <span class="badge">NumPy</span>
+        <span class="badge">Matplotlib</span>
+        <span class="badge">Tableau</span>
+        <span class="badge">Jupyter</span>
+        <span class="badge">Excel</span>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Highlighted Projects</h2>
+
+      <div class="grid">
+        <!-- Project 1 -->
+        <article class="card">
+          <img src="assets/netflix.png" alt="Netflix Data Analysis" />
+          <div class="card-body">
+            <h3>Netflix Data Analysis</h3>
+            <p>Python & Pandas — cleaned Netflix dataset and built visuals to find content trends and genre insights.</p>
+            <div class="card-actions">
+              <a class="link" href="https://github.com/Phemelocodemode/netflix-analysis" target="_blank">Repo</a>
+              <a class="link" href="#">Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="card">
+          <img src="assets/crime.png" alt="Crime Data Analysis" />
+          <div class="card-body">
+            <h3>SA Crime Data Analysis</h3>
+            <p>Exploratory analysis and automated CSV pipelines; visualized crime categories and trends.</p>
+            <div class="card-actions">
+              <a class="link" href="https://github.com/Phemelocodemode/sa-crime-analysis" target="_blank">Repo</a>
+              <a class="link" href="#">Notebook</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="card">
+          <img src="assets/bankruptcy.png" alt="Bankruptcy Prediction" />
+          <div class="card-body">
+            <h3>Bankruptcy Prediction (ML)</h3>
+            <p>Built Logistic Regression & Random Forest models with scikit-learn; feature engineering and evaluation.</p>
+            <div class="card-actions">
+              <a class="link" href="https://github.com/Phemelocodemode/bankruptcy-prediction" target="_blank">Repo</a>
+              <a class="link" href="#">Report</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p class="hint">Tip: update each project card with real repo links or Tableau embed links.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:phemelosebopelo14@gmail.com">phemelosebopelo14@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/phemelo-sebopelo-a428712b2/" target="_blank">/phemelo-sebopelo-a428712b2</a></p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="container">
+      <p>© <span id="year"></span> Phemelo Sebopelo • Built with GitHub Pages</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').innerText = new Date().getFullYear();
+  </script>
+</body>
+</html>
