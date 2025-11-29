@@ -2,61 +2,225 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Portfolio of Phemelo Sebopelo - Aspiring Data Analyst specializing in Python, SQL, and Data Visualization" />
-  <title>Phemelo Sebopelo — Portfolio</title>
-  <link rel="icon" href="assets/favicon.png" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+  <meta name="description" content="Portfolio of Phemelo Sebopelo - Data Analyst specializing in Python, SQL, and Data Visualization">
+  <meta name="theme-color" content="#2563eb">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta name="description" content="Portfolio of Phemelo Sebopelo - Aspiring Data Analyst specializing in Python, SQL, and Data Visualization" />
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></noscript>
+  <title>Phemelo Sebopelo — Portfolio</title>
   <style>
     /* Critical CSS for initial load */
     body { opacity: 0; transition: opacity 0.3s ease-in; }
     body.loaded { opacity: 1; }
+    
+    /* Modal Styles */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    
+    .modal[aria-hidden="false"] {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .modal__backdrop {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      cursor: pointer;
+    }
+    
+    .modal__panel {
+      position: relative;
+      background: #1a1f2e;
+      border-radius: 12px;
+      padding: 2rem;
+      width: 90%;
+      max-width: 700px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(45, 212, 191, 0.2);
+      z-index: 2;
+    }
+    
+    .modal__close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      line-height: 1;
+      opacity: 0.7;
+      transition: opacity 0.2s ease;
+    }
+    
+    .modal__close:hover {
+      opacity: 1;
+    }
+    
+    .modal__title {
+      margin: 0 0 1rem 0;
+      color: #fff;
+      font-size: 1.8rem;
+    }
+    
+    .modal__meta {
+      margin-bottom: 1.5rem;
+    }
+    
+    .modal__tools {
+      display: inline-block;
+      background: rgba(45, 212, 191, 0.15);
+      color: #2dd4bf;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    
+    .modal__content {
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    
+    .modal__repo {
+      margin: 2rem 0 0;
+      text-align: center;
+    }
+    
+    .modal__repo .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    @media (max-width: 768px) {
+      .modal__panel {
+        width: 95%;
+        padding: 1.5rem;
+      }
+      
+      .modal__title {
+        font-size: 1.5rem;
+        padding-right: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#main-content" class="skip-link" tabindex="0">Skip to main content</a>
   
-  <header class="hero">
+  <header class="hero" role="banner">
     <div class="container hero-inner">
       <div class="hero-left">
         <h1 class="name">Phemelo Sebopelo</h1>
         <p class="subtitle">BSc IT · Aspiring Data Analyst · Python • SQL • Tableau</p>
         <p class="lead">I build reproducible data projects and dashboards that turn messy data into clear insights. Focused on SQL, Python, Pandas and visual storytelling.</p>
-        <div class="cta-row">
+        <div class="hero-buttons">
           <a class="btn primary" href="#projects">
             <i class="fas fa-code-branch" style="margin-right: 8px;"></i>View Projects
           </a>
-          <a class="btn accent" href="/mnt/data/Phemelo Sebopelo CV.pdf" target="_blank" rel="noopener">
+          <a class="btn accent" href="assets/Phemelo Sebopelo CV.pdf" download="Phemelo_Sebopelo_CV.pdf">
             <i class="fas fa-download" style="margin-right: 8px;"></i>Download CV
           </a>
           <a class="btn ghost" href="https://www.linkedin.com/in/phemelo-sebopelo-a428712b2/" target="_blank" rel="noopener">
             <i class="fab fa-linkedin-in" style="margin-right: 8px;"></i>LinkedIn
           </a>
         </div>
+        
+        <div class="hero-stats" role="region" aria-label="Key Statistics">
+          <div class="stats-row">
+            <div class="stat-card" tabindex="0" role="button" aria-label="15 plus projects">
+              <div class="stat-number" aria-hidden="true">15+</div>
+              <div class="stat-label" aria-hidden="true">Projects</div>
+              <span class="sr-only">15 plus projects</span>
+            </div>
+            <div class="stat-card" tabindex="0" role="button" aria-label="3 years of experience">
+              <div class="stat-number" aria-hidden="true">3</div>
+              <div class="stat-label" aria-hidden="true">Years Experience</div>
+              <span class="sr-only">3 years of experience</span>
+            </div>
+            <div class="stat-card" tabindex="0" role="button" aria-label="5 plus tools">
+              <div class="stat-number" aria-hidden="true">5+</div>
+              <div class="stat-label" aria-hidden="true">Tools</div>
+              <span class="sr-only">5 plus tools</span>
+            </div>
+          </div>
+        </div>
         <style>
-          .hero-stats {
-            margin: 24px 0 0;
-            width: 100%;
+          /* Debug styles for images */
+          .card {
+            position: relative;
+            overflow: hidden;
           }
+          
+          /* Rounded corners for project images */
+          .card .project-image {
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
+          
+          .card .project-image:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+          }
+          
+          .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+          }
+          
+          .hero-stats {
+            width: 100%;
+            margin: 0;
+            max-width: 100%;
+            padding-left: 0;
+          }
+          
           .stats-row {
             display: flex;
-            justify-content: center;
-            gap: 24px;
-            margin: 0 auto;
-            max-width: 1000px;
-            padding: 0 20px;
+            justify-content: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
           }
           .stat-card {
             background: rgba(7, 20, 40, 0.7);
             border-radius: 10px;
-            padding: 22px;
+            padding: 18px;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
             flex: 1;
-            min-width: 0;
+            min-width: 140px;
+            max-width: 180px;
             text-align: center;
             border: 1px solid rgba(45, 212, 191, 0.15);
             backdrop-filter: blur(8px);
@@ -101,42 +265,38 @@
             border-color: rgba(45, 212, 191, 0.3);
           }
           @media (max-width: 768px) {
+            .hero-buttons {
+              flex-direction: column;
+              gap: 12px;
+            }
+            
+            .hero-buttons .btn {
+              width: 100%;
+              text-align: center;
+              justify-content: center;
+            }
+            
             .stats-row {
               flex-direction: column;
-              align-items: stretch;
+              align-items: flex-start;
               gap: 16px;
               max-width: 100%;
-              padding: 0 20px;
-              margin: 20px auto 0;
+              padding: 0;
+              margin: 0;
             }
+            
             .stat-card {
               width: 100%;
-              max-width: none;
-              padding: 20px;\n            }
+              max-width: 200px;
+              padding: 16px;
+              margin: 0 auto;
+            }
+            
             .stat-number {
-              font-size: 2rem;
+              font-size: 1.8rem;
             }
           }
         </style>
-        <div class="hero-stats" role="region" aria-label="Key Statistics">
-          <div class="stats-row">
-            <div class="stat-card" tabindex="0" role="button" aria-label="15 plus projects">
-              <div class="stat-number" aria-hidden="true">15+</div>
-              <div class="stat-label" aria-hidden="true">Projects</div>
-              <span class="sr-only">15 plus projects</span>
-            </div>
-            <div class="stat-card" tabindex="0" role="button" aria-label="3 years of experience">
-              <div class="stat-number" aria-hidden="true">3</div>
-              <div class="stat-label" aria-hidden="true">Years Experience</div>
-              <span class="sr-only">3 years of experience</span>
-            </div>
-            <div class="stat-card" tabindex="0" role="button" aria-label="5 plus tools">
-              <div class="stat-number" aria-hidden="true">5+</div>
-              <div class="stat-label" aria-hidden="true">Tools</div>
-              <span class="sr-only">5 plus tools</span>
-            </div>
-          </div>
-        </div>
       </div>
       <div class="hero-right">
         <div class="avatar" aria-hidden="true">
@@ -146,13 +306,21 @@
     </div>
   </header>
 
-  <main id="main-content" class="container">
+  <main id="main-content" class="container" role="main">
     <section id="projects" class="section">
       <h2><i class="fas fa-project-diagram" style="margin-right: 12px;"></i>Highlighted Projects</h2>
       <div class="cards">
-        <article class="card">
+        <article class="card" 
+                 data-title="Health Insurance Premiums Dashboard"
+                 data-tools="Tableau, Excel"
+                 data-summary="Interactive dashboard analyzing New York health insurance premiums from 2013-2017. This project visualizes trends, comparisons, and insights from health insurance premium data across different regions and demographics in New York state."
+                 data-repo="https://github.com/Phemelocodemode/health-insurance-premiums-dashboard">
           <a href="https://github.com/Phemelocodemode/health-insurance-premiums-dashboard" class="card-link" aria-label="View Health Insurance Premiums Dashboard project" target="_blank" rel="noopener"></a>
-          <img src="assets/Dashboard.PNG" alt="Health Insurance Premiums Dashboard" class="project-image" style="max-width: 100%; height: auto; display: block; object-fit: contain;">
+          <!-- Debug container for the image -->
+          <div style="background-color: #f0f0f0; border: 1px dashed #ccc; border-radius: 12px; padding: 10px; text-align: center; margin-bottom: 10px;">
+            <img src="assets/Dashboard.PNG" alt="Health Insurance Premiums Dashboard" class="project-image" style="max-width: 100%; max-height: 200px; object-fit: contain; border-radius: 8px; display: block; margin: 0 auto;">
+            <p style="margin: 5px 0 0; font-size: 12px; color: #666;">Dashboard Preview</p>
+          </div>
           <div class="card-content">
             <h3>Health Insurance Premiums Dashboard</h3>
             <p class="muted">Tableau • Excel — Interactive dashboard analyzing NY health insurance premiums (2013-2017).</p>
@@ -160,71 +328,87 @@
               <a href="https://github.com/Phemelocodemode/health-insurance-premiums-dashboard" class="link" aria-label="View repository for Health Insurance Premiums Dashboard" target="_blank" rel="noopener">
                 <i class="fab fa-github" style="margin-right: 6px;"></i>Repo
               </a> 
-              <a href="#" class="link" aria-label="View details of Health Insurance Premiums Dashboard">
-                <i class="fas fa-external-link-alt" style="margin-right: 6px;"></i>View Dashboard
+              <a href="#" class="link details-btn" aria-label="View details of Health Insurance Premiums Dashboard">
+                <i class="fas fa-external-link-alt" style="margin-right: 6px;"></i>View Details
               </a>
             </div>
           </div>
         </article>
-        <article class="card">
+        <article class="card"
+                 data-title="Netflix Data Analysis"
+                 data-tools="Python, Pandas, Matplotlib, Jupyter Notebook"
+                 data-summary="Exploratory data analysis of Netflix's content library, including visualizations of content distribution by genre, release year trends, and content ratings. This project includes data cleaning, analysis, and interactive visualizations to uncover insights about Netflix's catalog."
+                 data-repo="#">
           <a href="#" class="card-link" aria-label="View Netflix Data Analysis project"></a>
-          <img src="https://source.unsplash.com/random/600x400/?netflix,data,analysis" alt="Netflix data visualization" class="project-image">
+          <img src="https://source.unsplash.com/random/600x400/?netflix,data,analysis" alt="Netflix data visualization" class="project-image" loading="lazy" width="600" height="400">
           <div class="card-content">
             <h3>Netflix Data Analysis</h3>
           <p class="muted">Python • Pandas • Matplotlib — EDA & visual insights on titles & genres.</p>
           <div class="card-cta">
-            <a href="#" class="link" aria-label="View repository for Netflix Data Analysis">
+            <a href="https://github.com/Phemelocodemode/netflix-data-analysis" class="link" aria-label="View repository for Netflix Data Analysis" target="_blank" rel="noopener" style="display: inline-flex; align-items: center;">
               <i class="fab fa-github" style="margin-right: 6px;"></i>Repo
             </a> 
-            <button class="btn btn-sm" data-modal="modal1" aria-label="View details for this project">
-              <i class="fas fa-info-circle" aria-hidden="true" style="margin-right: 4px;"></i>Details
-            </button>
+            <a href="#" class="link details-btn" aria-label="View details of Netflix Data Analysis">
+              <i class="fas fa-external-link-alt" style="margin-right: 6px;"></i>View Details
+            </a>
           </div>
-          </div>
-        </article>
-        <article class="card">
+        </div>
+      </article>
+      <article class="card"
+               data-title="South African Crime Data Analysis"
+               data-tools="Python, Pandas, Matplotlib, GeoPandas"
+               data-summary="Comprehensive analysis of crime statistics across South Africa, featuring geospatial visualizations and trend analysis. This project processes official crime data to identify patterns, hotspots, and changes in crime rates over time, with interactive dashboards for exploring different crime categories and regions."
+                 data-repo="#">
           <a href="#" class="card-link" aria-label="View South African Crime Data Analysis project"></a>
           <img src="https://source.unsplash.com/random/600x400/?crime,data,analysis,south-africa" alt="Crime data visualization" class="project-image">
           <div class="card-content">
             <h3>South African Crime Data Analysis</h3>
           <p class="muted">Python • CSV pipelines • Visualizations to explore crime trends & categories.</p>
           <div class="card-cta">
-            <a href="#" class="link" aria-label="View repository for South African Crime Data Analysis">
+            <a href="https://github.com/Phemelocodemode/sa-crime-analysis" class="link" aria-label="View repository for South African Crime Data Analysis" target="_blank" rel="noopener" style="display: inline-flex; align-items: center;">
               <i class="fab fa-github" style="margin-right: 6px;"></i>Repo
             </a> 
-            <a href="#" class="link" aria-label="View details of South African Crime Data Analysis">
+            <a href="#" class="link details-btn" aria-label="View details of South African Crime Data Analysis">
               <i class="fas fa-external-link-alt" style="margin-right: 6px;"></i>Details
             </a>
           </div>
           </div>
         </article>
-        <article class="card">
+        <article class="card"
+                 data-title="Bankruptcy Prediction (ML)"
+                 data-tools="Python, scikit-learn, Pandas, Matplotlib"
+                 data-summary="Machine learning model to predict corporate bankruptcy using financial ratios. Implements Logistic Regression and Random Forest classifiers to analyze company financials and predict bankruptcy risk. Features include data preprocessing, feature engineering, model training, and performance evaluation with metrics like precision, recall, and ROC-AUC."
+                 data-repo="#">
           <a href="#" class="card-link" aria-label="View Bankruptcy Prediction project"></a>
-          <img src="https://source.unsplash.com/random/600x400/?finance,data,analytics" alt="Financial data visualization" class="project-image">
+          <img src="https://source.unsplash.com/random/600x400/?finance,data,analytics" alt="Financial data visualization" class="project-image" style="max-width: 100%; height: auto; display: block;">
           <div class="card-content">
             <h3>Bankruptcy Prediction (ML)</h3>
           <p class="muted">Python • scikit-learn — Logistic Regression & Random Forest for financial prediction.</p>
           <div class="card-cta">
-            <a href="#" class="link" aria-label="View repository for Bankruptcy Prediction">
+            <a href="https://github.com/Phemelocodemode/bankruptcy-prediction" class="link" aria-label="View repository for Bankruptcy Prediction" target="_blank" rel="noopener" style="display: inline-flex; align-items: center;">
               <i class="fab fa-github" style="margin-right: 6px;"></i>Repo
             </a> 
-            <a href="#" class="link" aria-label="View details of Bankruptcy Prediction">
+            <a href="#" class="link details-btn" aria-label="View details of Bankruptcy Prediction">
               <i class="fas fa-external-link-alt" style="margin-right: 6px;"></i>Details
             </a>
           </div>
           </div>
         </article>
-        <article class="card">
+        <article class="card"
+                 data-title="Vita-Care Telemedicine"
+                 data-tools="Flask, Python, HTML/CSS, JavaScript"
+                 data-summary="A telemedicine platform connecting patients with healthcare providers through secure video consultations. Features include appointment scheduling, electronic health records, and prescription management. Built with a focus on accessibility and user experience for both patients and healthcare professionals."
+                 data-repo="https://github.com/Phemelocodemode/Vitacare-TeleMedicine">
           <a href="https://github.com/Phemelocodemode/Vitacare-TeleMedicine" class="card-link" aria-label="View Vita-Care Telemedicine project" target="_blank" rel="noopener"></a>
           <img src="/assets/Vitacare.jpeg" alt="Vita-Care Telemedicine app interface" class="project-image" style="max-width: 100%; height: auto; display: block;">
           <div class="card-content">
             <h3>Vita-Care Telemedicine</h3>
             <p class="muted">Python • Kivy • Firebase — Mobile app for remote medical consultations and health management.</p>
             <div class="card-cta">
-              <a href="https://github.com/Phemelocodemode/Vitacare-TeleMedicine" class="link" aria-label="View repository for Vita-Care Telemedicine" target="_blank" rel="noopener">
+              <a href="https://github.com/Phemelocodemode/Vitacare-TeleMedicine" class="link" aria-label="View repository for Vita-Care Telemedicine" target="_blank" rel="noopener" style="display: inline-flex; align-items: center;">
                 <i class="fab fa-github" style="margin-right: 6px;"></i>Repo
               </a> 
-              <a href="#" class="link" aria-label="View details of Vita-Care Telemedicine">
+              <a href="#" class="link details-btn" aria-label="View details of Vita-Care Telemedicine">
                 <i class="fas fa-external-link-alt" style="margin-right: 6px;"></i>Details
               </a>
             </div>
@@ -344,23 +528,27 @@
     <section class="section connect">
       <h2><i class="fas fa-paper-plane" style="margin-right: 12px;"></i>Let's Connect</h2>
       <div class="connect-row">
-        <a class="contact instagram" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Connect on Instagram">
+        <a class="contact instagram" href="https://www.instagram.com/pray4phemz/" target="_blank" rel="noopener" aria-label="Connect with me on Instagram">
           <i class="fab fa-instagram"></i> Instagram
         </a>
-        <a class="contact tableau" href="https://public.tableau.com/app/profile/yourusername" target="_blank" rel="noopener" aria-label="View my Tableau Public profile">
+        <a class="contact tableau" href="https://public.tableau.com/app/profile/phemelo.sebopelo/vizzes" target="_blank" rel="noopener" aria-label="View my Tableau Public visualizations">
           <i class="fas fa-chart-bar"></i> Tableau Public
         </a>
-        <a class="contact email" href="mailto:phemelosebopelo14@gmail.com" aria-label="Send me an email">
+        <a class="contact email" href="#" id="email-button" aria-label="Send me an email">
           <i class="fas fa-envelope"></i> Email
         </a>
+        <script>
+          document.getElementById('email-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = 'mailto:phemelosebopelo14@gmail.com?subject=Portfolio%20Inquiry';
+            console.log('Email button clicked');
+          });
+        </script>
         <a class="contact whatsapp" href="https://wa.me/27633136167" target="_blank" rel="noopener" aria-label="Message me on WhatsApp">
           <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
         <a class="contact linkedin" href="https://www.linkedin.com/in/phemelo-sebopelo-a428712b2/" target="_blank" rel="noopener" aria-label="Connect on LinkedIn">
           <i class="fab fa-linkedin-in"></i> LinkedIn
-        </a>
-        <a class="contact resume" href="/mnt/data/Phemelo Sebopelo CV.pdf" target="_blank" rel="noopener" aria-label="View my resume">
-          <i class="fas fa-file-pdf"></i> Resume (PDF)
         </a>
       </div>
       <p class="strap">"This portfolio isn't just code — it's my story, my brand, and my way of connecting with the world through data and technology."</p>
@@ -368,7 +556,7 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div style="display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap;">
         <a href="https://github.com/Phemelocodemode" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
@@ -560,31 +748,26 @@
         }
       });
       
-      // Add click handlers to all "Details" buttons
-      document.querySelectorAll('.card-cta .link:last-child').forEach(button => {
+      // Add click handlers to all "Details" buttons (only for elements with details-btn class)
+      document.querySelectorAll('.details-btn').forEach(button => {
         button.addEventListener('click', function(e) {
           e.preventDefault();
+          e.stopPropagation();
           const card = this.closest('.card');
-          const projectId = card.querySelector('h3').textContent.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-          openModal(projectId);
-        });
-      });
-      
-      // Add click handlers to all "Repo" buttons to open in new tab
-      document.querySelectorAll('.card-cta .link:first-child').forEach(button => {
-        button.addEventListener('click', function(e) {
-          e.preventDefault();
-          const projectTitle = this.closest('.card').querySelector('h3').textContent;
-          const project = projects.find(p => p.title === projectTitle);
-          if (project) {
-            window.open(project.repo, '_blank', 'noopener,noreferrer');
+          if (card) {
+            openModal(card);
           }
         });
       });
-    }
-  </script>
 
-  <script>
+      // Remove any click handlers from Repo buttons to let them work normally
+      document.querySelectorAll('.card-cta .link:first-child').forEach(button => {
+        // Clone the button to remove all event listeners
+        const newButton = button.cloneNode(true);
+        button.parentNode.replaceChild(newButton, button);
+      });
+    }
+
     // Function to reorder hero elements for better accessibility
     function reorderHeroElements() {
       const heroLeft = document.querySelector('.hero-left');
@@ -628,33 +811,9 @@
         });
       }, observerOptions);
 
-      // Observe all sections
-      document.querySelectorAll('.section').forEach(section => {
+      // Observe all sections with the 'section' class
+      document.querySelectorAll('section').forEach(section => {
         observer.observe(section);
-      });
-
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          const targetId = this.getAttribute('href');
-          if (targetId === '#') return;
-          
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 80,
-              behavior: 'smooth'
-            });
-            
-            // Update URL without jumping
-            if (history.pushState) {
-              history.pushState(null, null, targetId);
-            } else {
-              window.location.hash = targetId;
-            }
-          }
-        });
       });
 
       // Make project cards fully clickable
@@ -729,6 +888,156 @@
           backToTop.style.display = 'flex';
         } else {
           backToTop.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+  <!-- Project Modal -->
+  <div id="project-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="project-modal-title" aria-modal="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel" role="document">
+      <button class="modal__close" aria-label="Close" data-close>&times;</button>
+      <h2 id="project-modal-title" class="modal__title"></h2>
+      <div class="modal__meta">
+        <span id="project-modal-tools" class="modal__tools"></span>
+      </div>
+      <div id="project-modal-body" class="modal__content"></div>
+      <p class="modal__repo">
+        <a id="project-modal-repo" href="#" target="_blank" rel="noopener noreferrer" class="btn primary">
+          <i class="fab fa-github" style="margin-right: 8px;"></i>View on GitHub
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Modal functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('project-modal');
+      const modalTitle = document.getElementById('project-modal-title');
+      const modalTools = document.getElementById('project-modal-tools');
+      const modalBody = document.getElementById('project-modal-body');
+      const modalRepo = document.getElementById('project-modal-repo');
+      const closeButtons = document.querySelectorAll('[data-close]');
+      // Get all detail buttons, including those loaded dynamically
+      function getDetailButtons() {
+        return document.querySelectorAll('.details-btn, .btn.details-btn');
+      }
+      
+      let detailButtons = getDetailButtons();
+      
+      // Open modal with project details
+      function openModal(projectCard) {
+        modalTitle.textContent = projectCard.dataset.title;
+        modalTools.textContent = projectCard.dataset.tools || '';
+        modalBody.innerHTML = projectCard.dataset.summary || '';
+        
+        // Set the repository link
+        const repo = projectCard.dataset.repo;
+        
+        if (repo) {
+          modalRepo.style.display = 'inline-flex';
+          
+          if (repo !== '#') {
+            // For valid repository links
+            modalRepo.href = repo;
+            modalRepo.target = '_blank';
+            modalRepo.rel = 'noopener noreferrer';
+            
+            // Ensure the link works by removing any existing click handlers
+            const newLink = modalRepo.cloneNode(true);
+            modalRepo.parentNode.replaceChild(newLink, modalRepo);
+            modalRepo = newLink;
+          } else {
+            // For '#' links, show the button but make it non-functional
+            modalRepo.href = '#';
+            modalRepo.onclick = function(e) {
+              e.preventDefault();
+              return false;
+            };
+          }
+        } else {
+          // Only hide if there's no repo attribute at all
+          modalRepo.style.display = 'none';
+        }
+        
+        // Show modal
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        
+        // Focus trap
+        const focusable = modal.querySelectorAll('button, [href], [tabindex]:not([tabindex="-1"])');
+        const firstFocusable = focusable[0];
+        const lastFocusable = focusable[focusable.length - 1];
+        
+        firstFocusable.focus();
+        
+        function handleKeyDown(e) {
+          if (e.key === 'Escape') closeModal();
+          if (e.key !== 'Tab') return;
+          
+          if (e.shiftKey) {
+            if (document.activeElement === firstFocusable) {
+              e.preventDefault();
+              lastFocusable.focus();
+            }
+          } else {
+            if (document.activeElement === lastFocusable) {
+              e.preventDefault();
+              firstFocusable.focus();
+            }
+          }
+        }
+        
+        modal._keyDownHandler = handleKeyDown;
+        document.addEventListener('keydown', handleKeyDown);
+      }
+      
+      // Close modal
+      function closeModal() {
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        document.removeEventListener('keydown', modal._keyDownHandler);
+      }
+      
+      // Function to initialize modal buttons
+      function initModalButtons() {
+        detailButtons = getDetailButtons();
+        detailButtons.forEach(btn => {
+          // Remove existing listeners to prevent duplicates
+          btn.removeEventListener('click', handleDetailsClick);
+          btn.addEventListener('click', handleDetailsClick);
+        });
+      }
+      
+      // Handle details button click
+      function handleDetailsClick(e) {
+        e.preventDefault();
+        const projectCard = this.closest('.card');
+        if (projectCard) openModal(projectCard);
+      }
+      
+      // Initialize buttons on load
+      initModalButtons();
+      
+      // Re-initialize buttons when the DOM changes (for dynamically loaded content)
+      const observer = new MutationObserver(() => {
+        initModalButtons();
+      });
+      
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+      
+      closeButtons.forEach(btn => {
+        btn.addEventListener('click', closeModal);
+      });
+      
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal || e.target.matches('[data-close]')) {
+          closeModal();
         }
       });
     });
