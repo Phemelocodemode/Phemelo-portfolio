@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Portfolio of Phemelo Sebopelo - Aspiring Data Analyst specializing in Python, SQL, and Data Visualization" />
+  <title>Phemelo Sebopelo — Portfolio</title>
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Critical CSS for initial load */
+    body { opacity: 0; transition: opacity 0.3s ease-in; }
+    body.loaded { opacity: 1; }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header class="hero">
+    <div class="container hero-inner">
+      <div class="hero-left">
+        <h1 class="name">Phemelo Sebopelo</h1>
+        <p class="subtitle">BSc IT · Aspiring Data Analyst · Python • SQL • Tableau</p>
+        <p class="lead">I build reproducible data projects and dashboards that turn messy data into clear insights. Focused on SQL, Python, Pandas and visual storytelling.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#projects">
+            <i class="fas fa-code-branch" style="margin-right: 8px;"></i>View Projects
+          </a>
+          <a class="btn accent" href="/mnt/data/Phemelo Sebopelo CV.pdf" target="_blank" rel="noopener">
+            <i class="fas fa-download" style="margin-right: 8px;"></i>Download CV
+          </a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/phemelo-sebopelo-a428712b2/" target="_blank" rel="noopener">
+            <i class="fab fa-linkedin-in" style="margin-right: 8px;"></i>LinkedIn
+          </a>
+        </div>
+        <style>
+          .hero-stats {
+            margin: 24px 0 0;
+            width: 100%;
+          }
+          .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin: 0 auto;
+            max-width: 1000px;
+            padding: 0 20px;
+          }
+          .stat-card {
+            background: rgba(7, 20, 40, 0.7);
+            border-radius: 10px;
+            padding: 22px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+            flex: 1;
+            min-width: 0;
+            text-align: center;
+            border: 1px solid rgba(45, 212, 191, 0.15);
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+          }
+          .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 10px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(45, 212, 191, 0.2), rgba(45, 212, 191, 0.05));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+          }
+          .stat-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2dd4bf, #5eead4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 8px;
+            line-height: 1;
+          }
+          .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 400;
+            letter-spacing: 0.5px;
+          }
+          .stat-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+            border-color: rgba(45, 212, 191, 0.3);
+          }
+          @media (max-width: 768px) {
+            .stats-row {
+              flex-direction: column;
+              align-items: stretch;
+              gap: 16px;
+              max-width: 100%;
+              padding: 0 20px;
+              margin: 20px auto 0;
+            }
+            .stat-card {
+              width: 100%;
+              max-width: none;
+              padding: 20px;\n            }
+            .stat-number {
+              font-size: 2rem;
+            }
+          }
+        </style>
+        <div class="hero-stats" role="region" aria-label="Key Statistics">
+          <div class="stats-row">
+            <div class="stat-card" tabindex="0" role="button" aria-label="15 plus projects">
+              <div class="stat-number" aria-hidden="true">15+</div>
+              <div class="stat-label" aria-hidden="true">Projects</div>
+              <span class="sr-only">15 plus projects</span>
+            </div>
+            <div class="stat-card" tabindex="0" role="button" aria-label="3 years of experience">
+              <div class="stat-number" aria-hidden="true">3</div>
+              <div class="stat-label" aria-hidden="true">Years Experience</div>
+              <span class="sr-only">3 years of experience</span>
+            </div>
+            <div class="stat-card" tabindex="0" role="button" aria-label="5 plus tools">
+              <div class="stat-number" aria-hidden="true">5+</div>
+              <div class="stat-label" aria-hidden="true">Tools</div>
+              <span class="sr-only">5 plus tools</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="avatar" aria-hidden="true">
+          <span>PS</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="container">
+    <section id="projects" class="section">
+      <h2><i class="fas fa-project-diagram" style="margin-right: 12px;"></i>Highlighted Projects</h2>
+      <div class="cards">
+        <article class="card">
+          <a href="https://github.com/Phemelocodemode/health-insurance-premiums-dashboard" class="card-link" aria-label="View Health Insurance Premiums Dashboard project" target="_blank" rel="noopener"></a>
+          <img src="assets/Dashboard.PNG" alt="Health Insurance Premiums Dashboard" class="project-image" style="max-width: 100%; height: auto; display: block; object-fit: contain;">
+          <div class="card-content">
+            <h3>Health Insurance Premiums Dashboard</h3>
+            <p class="muted">Tableau • Excel — Interactive dashboard analyzing NY health insurance premiums (2013-2017).</p>
+            <div class="card-cta">
+              <a href="https://github.com/Phemelocodemode/health-insurance-premiums-dashboard" class="link" aria-label="View repository for Health Insurance Premiums Dashboard" target="_blank" rel="noopener">
+                <i class="fab fa-github" style="margin-right: 6px;"></i>Repo
+              </a> 
+              <a href="#" class="link" aria-label="View details of Health Insurance Premiums Dashboard">
+                <i class="fas fa-external-link-alt" style="margin-right: 6px;"></i>View Dashboard
+              </a>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <a href="#" class="card-link" aria-label="View Netflix Data Analysis project"></a>
+          <img src="https://source.unsplash.com/random/600x400/?netflix,data,analysis" alt="Netflix data visualization" class="project-image">
+          <div class="card-content">
+            <h3>Netflix Data Analysis</h3>
+          <p class="muted">Python • Pandas • Matplotlib — EDA & visual insights on titles & genres.</p>
+          <div class="card-cta">
+            <a href="#" class="link" aria-label="View repository for Netflix Data Analysis">
+              <i class="fab fa-github" style="margin-right: 6px;"></i>Repo
+            </a> 
+            <button class="btn btn-sm" data-modal="modal1" aria-label="View details for this project">
+              <i class="fas fa-info-circle" aria-hidden="true" style="margin-right: 4px;"></i>Details
+            </button>
+          </div>
+          </div>
+        </article>
+        <article class="card">
+          <a href="#" class="card-link" aria-label="View South African Crime Data Analysis project"></a>
+          <img src="https://source.unsplash.com/random/600x400/?crime,data,analysis,south-africa" alt="Crime data visualization" class="project-image">
+          <div class="card-content">
+            <h3>South African Crime Data Analysis</h3>
+          <p class="muted">Python • CSV pipelines • Visualizations to explore crime trends & categories.</p>
+          <div class="card-cta">
+            <a href="#" class="link" aria-label="View repository for South African Crime Data Analysis">
+              <i class="fab fa-github" style="margin-right: 6px;"></i>Repo
+            </a> 
+            <a href="#" class="link" aria-label="View details of South African Crime Data Analysis">
+              <i class="fas fa-external-link-alt" style="margin-right: 6px;"></i>Details
+            </a>
+          </div>
+          </div>
+        </article>
+        <article class="card">
+          <a href="#" class="card-link" aria-label="View Bankruptcy Prediction project"></a>
+          <img src="https://source.unsplash.com/random/600x400/?finance,data,analytics" alt="Financial data visualization" class="project-image">
+          <div class="card-content">
+            <h3>Bankruptcy Prediction (ML)</h3>
+          <p class="muted">Python • scikit-learn — Logistic Regression & Random Forest for financial prediction.</p>
+          <div class="card-cta">
+            <a href="#" class="link" aria-label="View repository for Bankruptcy Prediction">
+              <i class="fab fa-github" style="margin-right: 6px;"></i>Repo
+            </a> 
+            <a href="#" class="link" aria-label="View details of Bankruptcy Prediction">
+              <i class="fas fa-external-link-alt" style="margin-right: 6px;"></i>Details
+            </a>
+          </div>
+          </div>
+        </article>
+        <article class="card">
+          <a href="https://github.com/Phemelocodemode/Vitacare-TeleMedicine" class="card-link" aria-label="View Vita-Care Telemedicine project" target="_blank" rel="noopener"></a>
+          <img src="/assets/Vitacare.jpeg" alt="Vita-Care Telemedicine app interface" class="project-image" style="max-width: 100%; height: auto; display: block;">
+          <div class="card-content">
+            <h3>Vita-Care Telemedicine</h3>
+            <p class="muted">Python • Kivy • Firebase — Mobile app for remote medical consultations and health management.</p>
+            <div class="card-cta">
+              <a href="https://github.com/Phemelocodemode/Vitacare-TeleMedicine" class="link" aria-label="View repository for Vita-Care Telemedicine" target="_blank" rel="noopener">
+                <i class="fab fa-github" style="margin-right: 6px;"></i>Repo
+              </a> 
+              <a href="#" class="link" aria-label="View details of Vita-Care Telemedicine">
+                <i class="fas fa-external-link-alt" style="margin-right: 6px;"></i>Details
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section tech">
+      <h2><i class="fas fa-code" style="margin-right: 12px;"></i>Tech Stack</h2>
+      <div class="badges">
+        <span class="badge"><i class="fab fa-python" style="margin-right: 6px;"></i>Python</span>
+        <span class="badge"><i class="fas fa-database" style="margin-right: 6px;"></i>SQL</span>
+        <span class="badge"><i class="fas fa-table" style="margin-right: 6px;"></i>Pandas</span>
+        <span class="badge"><i class="fas fa-calculator" style="margin-right: 6px;"></i>NumPy</span>
+        <span class="badge"><i class="fas fa-chart-line" style="margin-right: 6px;"></i>Matplotlib</span>
+        <span class="badge"><i class="fas fa-chart-pie" style="margin-right: 6px;"></i>Tableau</span>
+        <span class="badge"><i class="fas fa-book" style="margin-right: 6px;"></i>Jupyter</span>
+        <span class="badge"><i class="fas fa-robot" style="margin-right: 6px;"></i>Scikit-learn</span>
+        <span class="badge"><i class="fas fa-file-excel" style="margin-right: 6px;"></i>Microsoft Excel</span>
+        <span class="badge"><i class="fas fa-table" style="margin-right: 6px;"></i>Google Sheets</span>
+      </div>
+    </section>
+
+    <section class="section stats">
+      <h2><i class="fab fa-github" style="margin-right: 12px;"></i>GitHub & Activity</h2>
+      <div class="stats-row">
+        <div class="stat-card">
+          <img 
+            src="https://github-readme-stats.vercel.app/api?username=Phemelocodemode&show_icons=true&theme=tokyonight&hide_border=true" 
+            alt="GitHub stats for Phemelocodemode" 
+            loading="lazy"
+          />
+        </div>
+        <div class="stat-card">
+          <img 
+            src="https://github-readme-stats.vercel.app/api/top-langs/?username=Phemelocodemode&layout=compact&theme=tokyonight&hide_border=true" 
+            alt="Top programming languages used by Phemelocodemode"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="section timeline">
+      <h2><i class="fas fa-graduation-cap" style="margin-right: 12px;"></i>Education & Experience</h2>
+      <div class="timeline-row">
+        <div class="timeline-card">
+          <div class="timeline-date">2023 — 2025</div>
+          <h3>BSc Information Technology</h3>
+          <p class="muted">
+            <i class="fas fa-university" style="margin-right: 8px; color: var(--accent);"></i>
+            Richfield Graduate Institute of Technology — 2023 to 2025
+          </p>
+          <div style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
+            <strong>Core Modules Completed</strong>
+            <ul class="muted" style="margin-top: 0.5rem; padding-left: 1.5rem;">
+              <li>Programming Fundamentals (Python, Java, JavaScript)</li>
+              <li>Web & Mobile App Development</li>
+              <li>Database Design & SQL</li>
+              <li>Information Systems & Business Analysis</li>
+              <li>Networking & Cybersecurity Essentials</li>
+              <li>Software Engineering Principles</li>
+            </ul>
+          </div>
+          <div style="margin-top: 0.5rem;">
+            <strong>Elective / Specialisation Stream</strong>
+            <ul class="muted" style="margin-top: 0.5rem; padding-left: 1.5rem; margin-bottom: 0;">
+              <li>Data Analytics Fundamentals</li>
+              <li>Data Visualization & Reporting</li>
+              <li>Excel & Advanced Productivity Tools</li>
+              <li>Machine Learning Concepts</li>
+            </ul>
+          </div>
+          </ul>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-date">2025</div>
+          <h3>KATAFRICA Strategic Solutions</h3>
+          <p class="muted">
+            <i class="fas fa-briefcase" style="margin-right: 8px; color: var(--accent);"></i>
+            Work Integrated Learning Placement
+          </p>
+          <ul class="muted" style="margin-top: 0.75rem; padding-left: 1.5rem;">
+            <li>Excel automation for business processes</li>
+            <li>Property inspection form automation</li>
+            <li>Website support and maintenance</li>
+            <li>Data analysis and reporting</li>
+          </ul>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-date">2025</div>
+          <h3>Sadila Strategic Solutions</h3>
+          <p class="muted">
+            <i class="fas fa-briefcase" style="margin-right: 8px; color: var(--accent);"></i>
+            Data Analytics Work Integrated Learning
+          </p>
+          <ul class="muted" style="margin-top: 0.75rem; padding-left: 1.5rem;">
+            <li>Built Tableau dashboards using company datasets</li>
+            <li>Cleaned and prepared data for calculated fields and KPIs</li>
+            <li>Delivered a dashboard presentation to the team</li>
+            <li>Applied data visualization and storytelling techniques</li>
+            <li>Supported analysts with insights and reporting</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section quote">
+      <blockquote>
+        <i class="fas fa-quote-left" style="color: var(--accent); margin-right: 12px; opacity: 0.5;"></i>
+        Data will talk to you if you're willing to listen.
+        <cite>— Jim Bergeson</cite>
+      </blockquote>
+    </section>
+
+    <section class="section connect">
+      <h2><i class="fas fa-paper-plane" style="margin-right: 12px;"></i>Let's Connect</h2>
+      <div class="connect-row">
+        <a class="contact instagram" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Connect on Instagram">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a class="contact tableau" href="https://public.tableau.com/app/profile/yourusername" target="_blank" rel="noopener" aria-label="View my Tableau Public profile">
+          <i class="fas fa-chart-bar"></i> Tableau Public
+        </a>
+        <a class="contact email" href="mailto:phemelosebopelo14@gmail.com" aria-label="Send me an email">
+          <i class="fas fa-envelope"></i> Email
+        </a>
+        <a class="contact whatsapp" href="https://wa.me/27633136167" target="_blank" rel="noopener" aria-label="Message me on WhatsApp">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a class="contact linkedin" href="https://www.linkedin.com/in/phemelo-sebopelo-a428712b2/" target="_blank" rel="noopener" aria-label="Connect on LinkedIn">
+          <i class="fab fa-linkedin-in"></i> LinkedIn
+        </a>
+        <a class="contact resume" href="/mnt/data/Phemelo Sebopelo CV.pdf" target="_blank" rel="noopener" aria-label="View my resume">
+          <i class="fas fa-file-pdf"></i> Resume (PDF)
+        </a>
+      </div>
+      <p class="strap">"This portfolio isn't just code — it's my story, my brand, and my way of connecting with the world through data and technology."</p>
+      <p class="dev">Developed with <i class="fas fa-heart" style="color: #ff6b6b;"></i> by <strong>Phemelo Sebopelo</strong></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div style="display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap;">
+        <a href="https://github.com/Phemelocodemode" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:your.email@example.com" class="social-link" aria-label="Email Me"><i class="fas fa-envelope"></i></a>
+        <a href="#" class="social-link" aria-label="Download CV"><i class="fas fa-file-download"></i></a>
+        <a href="#" style="color: var(--muted); text-decoration: none; transition: color 0.3s ease;">
+          Projects
+        </a>
+        <span style="color: var(--muted); opacity: 0.5;">•</span>
+        <a href="#" style="color: var(--muted); text-decoration: none; transition: color 0.3s ease;">
+          Blog
+        </a>
+      </div>
+      <small>© 2025 Phemelo Sebopelo — Built with <i class="fas fa-heart" style="color: #ff6b6b;"></i> & <i class="fas fa-coffee"></i></small>
+      <div style="margin-top: 1rem; color: var(--muted); font-size: 0.8rem; opacity: 0.8;">
+        <small>Hosted on GitHub Pages & Netlify</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Details Modal -->
+  <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription" hidden>
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <h2 id="modalTitle" class="modal-title"></h2>
+      <p class="modal-tools"></p>
+      <p id="modalDescription" class="modal-description"></p>
+      <div class="modal-actions">
+        <a href="#" target="_blank" rel="noopener" class="btn outline modal-repo">
+          <i class="fab fa-github" style="margin-right: 8px;"></i>View on GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Project data
+    const projects = [
+      {
+        id: "netflix",
+        title: "Netflix Data Analysis",
+        tools: "Python, Pandas, Matplotlib, Jupyter",
+        summary: "Cleaned dataset, engineered features, produced visual dashboards exploring top genres, release-year trends, and content duration. Includes reproducible notebooks and a detailed README with insights.",
+        repo: "https://github.com/Phemelocodemode/netflix-data-analysis"
+      },
+      {
+        id: "sa-crime",
+        title: "South African Crime Data Analysis",
+        tools: "Python, CSV pipelines, Pandas, Visualization tools",
+        summary: "Built CSV processing pipelines and created visualizations that explore crime trends and categories across South Africa.",
+        repo: "https://github.com/Phemelocodemode/SA-crime-analysis"
+      },
+      {
+        id: "bankruptcy",
+        title: "Bankruptcy Prediction (ML)",
+        tools: "Python, scikit-learn, Logistic Regression, Random Forest",
+        summary: "Engineered financial features, trained multiple ML models, evaluated performance, and generated insights into bankruptcy prediction for businesses.",
+        repo: "https://github.com/Phemelocodemode/company-bankruptcy-prediction"
+      },
+      {
+        id: "vitacare",
+        title: "VITACARE Telemedicine (Group Project)",
+        tools: "HTML, CSS, UX structure",
+        summary: "Contributed to UI/UX structure, layout, and project documentation for a telemedicine system developed as part of a group project.",
+        repo: "https://github.com/Phemelocodemode/Vitacare-TeleMedicine"
+      }
+    ];
+
+    // Add loaded class to body to prevent FOUC
+    document.addEventListener('DOMContentLoaded', function() {
+      document.body.classList.add('loaded');
+      
+      // Initialize modal functionality
+      initModal();
+      
+      // Intersection Observer for scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible', 'fade-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Observe all sections with the 'section' class
+      document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+      });
+    });
+
+    function initModal() {
+      const modal = document.getElementById('projectModal');
+      const modalTitle = modal.querySelector('.modal-title');
+      const modalTools = modal.querySelector('.modal-tools');
+      const modalDescription = modal.querySelector('.modal-description');
+      const modalRepo = modal.querySelector('.modal-repo');
+      const closeButton = modal.querySelector('.modal-close');
+      const backdrop = modal.querySelector('.modal-backdrop');
+      
+      // Store the element that had focus before the modal was opened
+      let focusedElementBeforeModal = null;
+      
+      // Function to open the modal
+      function openModal(projectId) {
+        const project = projects.find(p => p.id === projectId);
+        if (!project) return;
+        
+        // Update modal content
+        modalTitle.textContent = project.title;
+        modalTools.textContent = project.tools;
+        modalDescription.textContent = project.summary;
+        modalRepo.href = project.repo;
+        
+        // Store current focus
+        focusedElementBeforeModal = document.activeElement;
+        
+        // Show modal
+        modal.hidden = false;
+        document.body.style.overflow = 'hidden';
+        
+        // Set focus to the first focusable element in the modal
+        setTimeout(() => {
+          modal.classList.add('visible');
+          closeButton.focus();
+          
+          // Trap focus inside the modal
+          trapFocus(modal);
+        }, 10);
+      }
+      
+      // Function to close the modal
+      function closeModal() {
+        modal.classList.remove('visible');
+        
+        // Wait for the animation to complete before hiding
+        setTimeout(() => {
+          modal.hidden = true;
+          document.body.style.overflow = '';
+          
+          // Return focus to the element that had it before the modal was opened
+          if (focusedElementBeforeModal) {
+            focusedElementBeforeModal.focus();
+          }
+        }, 250);
+      }
+      
+      // Function to trap focus inside the modal
+      function trapFocus(modal) {
+        const focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+        const focusableContent = modal.querySelectorAll(focusableElements);
+        const firstFocusableElement = focusableContent[0];
+        const lastFocusableElement = focusableContent[focusableContent.length - 1];
+        
+        modal.addEventListener('keydown', function(e) {
+          if (e.key !== 'Tab') return;
+          
+          if (e.shiftKey) {
+            if (document.activeElement === firstFocusableElement) {
+              e.preventDefault();
+              lastFocusableElement.focus();
+            }
+          } else {
+            if (document.activeElement === lastFocusableElement) {
+              e.preventDefault();
+              firstFocusableElement.focus();
+            }
+          }
+        });
+      }
+      
+      // Close modal when clicking the close button or backdrop
+      closeButton.addEventListener('click', closeModal);
+      backdrop.addEventListener('click', closeModal);
+      
+      // Close modal with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !modal.hidden) {
+          closeModal();
+        }
+      });
+      
+      // Add click handlers to all "Details" buttons
+      document.querySelectorAll('.card-cta .link:last-child').forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          const card = this.closest('.card');
+          const projectId = card.querySelector('h3').textContent.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+          openModal(projectId);
+        });
+      });
+      
+      // Add click handlers to all "Repo" buttons to open in new tab
+      document.querySelectorAll('.card-cta .link:first-child').forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          const projectTitle = this.closest('.card').querySelector('h3').textContent;
+          const project = projects.find(p => p.title === projectTitle);
+          if (project) {
+            window.open(project.repo, '_blank', 'noopener,noreferrer');
+          }
+        });
+      });
+    }
+  </script>
+
+  <script>
+    // Function to reorder hero elements for better accessibility
+    function reorderHeroElements() {
+      const heroLeft = document.querySelector('.hero-left');
+      const ctaRow = document.querySelector('.cta-row');
+      const heroStats = document.querySelector('.hero-stats');
+      
+      if (heroLeft && ctaRow && heroStats) {
+        // Only move if not already in the correct position
+        if (heroStats.previousElementSibling !== ctaRow) {
+          heroLeft.insertBefore(ctaRow.nextElementSibling, ctaRow.nextSibling);
+          ctaRow.after(heroStats);
+        }
+      }
+    }
+
+    // Add loaded class to body to prevent FOUC
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initial reorder
+      reorderHeroElements();
+      
+      // Reorder on window resize
+      let resizeTimer;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(reorderHeroElements, 100);
+      });
+      document.body.classList.add('loaded');
+      
+      // Intersection Observer for scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible', 'fade-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Observe all sections
+      document.querySelectorAll('.section').forEach(section => {
+        observer.observe(section);
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+            
+            // Update URL without jumping
+            if (history.pushState) {
+              history.pushState(null, null, targetId);
+            } else {
+              window.location.hash = targetId;
+            }
+          }
+        });
+      });
+
+      // Make project cards fully clickable
+      document.querySelectorAll('.card-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+          // Only trigger if the click wasn't on a button or link inside the card
+          if (e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON') {
+            const detailsLink = this.closest('.card').querySelector('.card-cta a:last-child');
+            if (detailsLink) {
+              detailsLink.click();
+            }
+          }
+        });
+      });
+
+      // Add keyboard navigation to cards
+      document.querySelectorAll('.card').forEach(card => {
+        card.setAttribute('tabindex', '0');
+        card.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            const detailsLink = this.querySelector('.card-cta a:last-child');
+            if (detailsLink) {
+              detailsLink.click();
+            }
+          }
+        });
+      });
+
+      // Back to top button functionality
+      const backToTop = document.createElement('button');
+      backToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
+      backToTop.setAttribute('aria-label', 'Back to top');
+      backToTop.style.position = 'fixed';
+      backToTop.style.bottom = '30px';
+      backToTop.style.right = '30px';
+      backToTop.style.width = '50px';
+      backToTop.style.height = '50px';
+      backToTop.style.borderRadius = '50%';
+      backToTop.style.background = 'var(--accent)';
+      backToTop.style.color = '#041022';
+      backToTop.style.border = 'none';
+      backToTop.style.cursor = 'pointer';
+      backToTop.style.display = 'none';
+      backToTop.style.justifyContent = 'center';
+      backToTop.style.alignItems = 'center';
+      backToTop.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+      backToTop.style.transition = 'all 0.3s ease';
+      backToTop.style.zIndex = '99';
+      
+      backToTop.addEventListener('mouseover', () => {
+        backToTop.style.transform = 'translateY(-3px)';
+        backToTop.style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.2)';
+      });
+      
+      backToTop.addEventListener('mouseout', () => {
+        backToTop.style.transform = 'translateY(0)';
+        backToTop.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+      });
+      
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+      
+      document.body.appendChild(backToTop);
+      
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          backToTop.style.display = 'flex';
+        } else {
+          backToTop.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
